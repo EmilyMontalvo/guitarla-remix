@@ -1,32 +1,30 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
-import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
+export function meta(){
+    return (
+        {
+            charset: "utf-8",
+            title:"Guitar LA - Remix",
+            viewport: "widht=device-width,initial-scale=1"
+        }
+    )
+}
+export default function App(){
 
-export const links = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-];
+    return(
+       <Document>
+        <h1>Holi</h1>
+        </Document>
 
-export default function App() {
-  return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Outlet />
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
-    </html>
-  );
+    )
+
+}
+function Document({children}){
+    return(
+        <html lang= "es">
+            <head>
+            </head>
+            <body>
+                {children}
+            </body>
+        </html>
+    )
 }
