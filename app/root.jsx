@@ -3,7 +3,11 @@ import {
     Links,
     Outlet
 } from "@remix-run/react"
-import styles from './styles/index.css'
+/* Coloco ~ en el json.config para apuntar a la carpeta app, entonces puedo poner ~ en mis rutas para que apunte
+directo a la carpeta y no tenga que hacer esto: ../../ para salir de las carpetas
+Asi obtengo la ruta relativa hacia la app */
+import styles from '~/styles/index.css'
+import Header from "~/components/Header"
 
 //  el return en la ruta "meta()" debe retornar un objeto.[CORCHETES]
 export function meta(){
@@ -68,6 +72,7 @@ function Document({children}){
                 <Links/>
             </head>
             <body>
+                <Header/>
                 {children}
             </body>
         </html>
