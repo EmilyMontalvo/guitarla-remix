@@ -1,6 +1,7 @@
 import {
     Meta, 
-    Links
+    Links,
+    Outlet
 } from "@remix-run/react"
 import styles from './styles/index.css'
 
@@ -18,6 +19,8 @@ export function meta(){
 //imagenes para un prefetch o un preload
 // el return en la ruta "links()" debe retornar un objeto. [CORCHETES]
 // se cargo la hoja de estilo y las fuentes de google font, el orden en que se pusieron es importante
+
+/* REMIX es un modelo basado en rutas porque con forme vayas creando archivos en routes las ira registrando como rutas de tu aplicacion*/
 export const links = () => {
     return [
         {
@@ -46,10 +49,12 @@ export const links = () => {
     ]
 }
 
+/* Al agregar Outlet puedo inyectar todas las routas que tengo en routes para que se muestren */
+
 export default function App(){
     return(
        <Document>
-        <h1>Holi</h1>
+            <Outlet/>
         </Document>
     )
 }
