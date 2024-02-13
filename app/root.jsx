@@ -10,6 +10,7 @@ directo a la carpeta y no tenga que hacer esto: ../../ para salir de las carpeta
 Asi obtengo la ruta relativa hacia la app */
 import styles from '~/styles/index.css'
 import Header from "~/components/Header"
+import Footer from "~/components/footer"
 
 //  el return en la ruta "meta()" debe retornar un objeto.[CORCHETES]
 // Este meta funciona en routes pero no para componentes
@@ -70,7 +71,6 @@ function Document({children}){
     return(
         <html lang= "es">
             <head>
-                
                 <Meta/>
                 <Links/>
             </head>
@@ -79,6 +79,7 @@ function Document({children}){
                 {children}
                 <Scripts/>
                 <LiveReload/>
+                <Footer/>
             </body>
         </html>
     )
