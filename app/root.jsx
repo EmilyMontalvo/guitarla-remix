@@ -1,7 +1,9 @@
 import {
-    Meta, 
-    Links,
-    Outlet
+    Meta,   // Para la cabecera
+    Links,  // Para importar estilos, etc
+    Outlet, // Para inyectar routas
+    Scripts, // Tiene todas las optimizaciones de Remix, sirve para ya no tener el flasheo de cargando
+    LiveReload // Para no estar recargando a cada momento, esucha los cambios
 } from "@remix-run/react"
 /* Coloco ~ en el json.config para apuntar a la carpeta app, entonces puedo poner ~ en mis rutas para que apunte
 directo a la carpeta y no tenga que hacer esto: ../../ para salir de las carpetas
@@ -10,6 +12,7 @@ import styles from '~/styles/index.css'
 import Header from "~/components/Header"
 
 //  el return en la ruta "meta()" debe retornar un objeto.[CORCHETES]
+// Este meta funciona en routes pero no para componentes
 export function meta(){
     return [
         { charset: 'utf-8' },
@@ -74,6 +77,8 @@ function Document({children}){
             <body>
                 <Header/>
                 {children}
+                <Scripts/>
+                <LiveReload/>
             </body>
         </html>
     )
