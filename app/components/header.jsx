@@ -3,7 +3,7 @@ import {
   Link
 } from '@remix-run/react'
 import logo from '../../public/img/logo.svg'
-import Navegacion from './navegacion'
+import Navegation from './navegation'
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
         <Link className="logo" to='/'>
           <img className='logo' src={logo} alt="Imagen logo" />
         </Link>
-        <Navegacion/>
+        <Navegation/>
       </div>
     </header>
   )
